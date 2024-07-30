@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digiteam Inventory Management</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Digiteam Inventory Management</h1>
+    <a href="{{ url_for('add_product') }}">Add Product</a>
+    <a href="{{ url_for('export') }}">Export to Excel</a>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Manufacturer</th>
+            <th>Type Number</th>
+            <th>Project</th>
+            <th>Order Processor</th>
+            <th>Date of Purchase</th>
+            <th>Storage Period</th>
+            <th>Value Before Tax</th>
+            <th>Tax Rate</th>
+            <th>Taxable Value</th>
+            <th>Location</th>
+            <th>Actions</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.name }}</td>
+            <td>{{ product.manufacturer }}</td>
+            <td>{{ product.type_number }}</td>
+            <td>{{ product.project }}</td>
+            <td>{{ product.order_processor }}</td>
+            <td>{{ product.date_of_purchase }}</td>
+            <td>{{ product.storage_period }}</td>
+            <td>{{ product.value_before_tax }}</td>
+            <td>{{ product.tax_rate }}</td>
+            <td>{{ product.taxable_value }}</td>
+            <td>{{ product.location }}</td>
+            <td>
+                <a href="{{ url_for('modify_product', type_number=product.type_number) }}">Modify</a>
+                <a href="{{ url_for('delete_product', type_number=product.type_number) }}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

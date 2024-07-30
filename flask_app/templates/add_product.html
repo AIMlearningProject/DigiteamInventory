@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Product</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Add Product</h1>
+    <form method="POST">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="manufacturer">Manufacturer:</label><br>
+        <input type="text" id="manufacturer" name="manufacturer"><br>
+        <label for="type_number">Type Number:</label><br>
+        <input type="text" id="type_number" name="type_number"><br>
+        <label for="project">Project:</label><br>
+        <input type="text" id="project" name="project"><br>
+        <label for="order_processor">Order Processor:</label><br>
+        <input type="text" id="order_processor" name="order_processor"><br>
+        <label for="date_of_purchase">Date of Purchase:</label><br>
+        <input type="text" id="date_of_purchase" name="date_of_purchase"><br>
+        <label for="storage_period">Storage Period (years):</label><br>
+        <input type="text" id="storage_period" name="storage_period"><br>
+        <label for="value_before_tax">Value Before Tax:</label><br>
+        <input type="text" id="value_before_tax" name="value_before_tax"><br>
+        <label for="tax_rate">Tax Rate (%):</label><br>
+        <input type="text" id="tax_rate" name="tax_rate"><br>
+        <label for="location">Location:</label><br>
+        <input type="text" id="location" name="location"><br><br>
+        <input type="submit" value="Add Product">
+    </form>
+</body>
+</html>
